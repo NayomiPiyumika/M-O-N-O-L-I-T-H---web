@@ -1,0 +1,194 @@
+<div class="luxury-container">
+  <header class="navbar">
+    <div class="logo">M O N O L I T H</div>
+    <div class="nav-links">
+   <span class="nav-link" onclick="document.querySelector('.expertise-section').scrollIntoView({behavior: 'smooth'})">
+  SERVICES
+</span>
+<span class="nav-link" onclick="document.querySelector('.philosophy-section').scrollIntoView({behavior: 'smooth'})">
+ PHILOSOPHY
+</span>
+<span onclick="document.getElementById('inquiries').scrollIntoView({behavior: 'smooth'})">
+  INQUIRIES
+</span>    </div>
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop" alt="Hero Image">
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-text">
+      <span class="pre-title">INTERIOR ARCHITECTURE</span>
+      <h1>SPACE &<br>SILENCE</h1>
+      <p>Crafting bespoke living environments that prioritize essential beauty and architectural integrity.</p>
+      <div class="explore-btn" onclick="document.querySelector('.gallery-section').scrollIntoView({behavior: 'smooth'})">
+  <span class="line"></span>
+  VIEW PROJECTS
+</div>
+    </div>
+  </main>
+
+  <section class="expertise-section">
+    <div class="section-header">
+      <span class="line"></span>
+      <span class="section-title">OUR SERVICES</span>
+    </div>
+    <div class="expertise-grid">
+      <div class="skill-card">
+        <span class="number">01</span>
+        <h3>Spatial Planning</h3>
+        <p>Optimizing every square inch to create a flow that feels natural and expansive.</p>
+      </div>
+      <div class="skill-card">
+        <span class="number">02</span>
+        <h3>Material Curation</h3>
+        <p>Sourcing the finest rare stones, sustainable woods, and artisanal finishes.</p>
+      </div>
+      <div class="skill-card">
+        <span class="number">03</span>
+        <h3>Lighting Design</h3>
+        <p>Atmospheric lighting solutions that transform spaces from day to night.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="section-header">
+      <span class="line dark-line"></span>
+      <span class="section-title dark-text">SELECTED WORKS</span>
+    </div>
+
+    <div class="masonry-grid">
+      @for (project of projects; track project.title) {
+        <div class="gallery-item" [class]="project.size">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="item-info">
+            <p class="category">{{ project.category }}</p><h4>{{ project.title }}</h4>
+            <p>{{ project.location }}</p>
+            <p class="project-desc">{{ project.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+
+
+
+<section id="philosophy" class="philosophy-section">
+  <div class="philosophy-content">
+    
+    <div class="section-header">
+      <span class="line dark-line"></span>
+      <span class="section-title dark-text">OUR PHILOSOPHY</span>
+    </div>
+    
+    <div class="philosophy-grid">
+      <div class="philosophy-text">
+        <h2>Simplicity is the <br> ultimate sophistication.</h2>
+        <p>We believe that architecture should be a silent backdrop to life. Every line we draw and every material we select is a conscious decision to create harmony between the structure and its soul.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="gold-text">12+</span>
+            <p>Years of <br> Excellence</p>
+          </div>
+          <div class="stat-item">
+            <span class="gold-text">85</span>
+            <p>Bespoke <br> Projects</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-image">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Architecture Philosophy">
+        <div class="image-overlay-text">EST. 2014</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="inquiries" class="inquiry-section">
+  <div class="inquiry-container">
+    <div class="contact-info">
+      <div class="section-header">
+        <span class="line dark-line"></span>
+        <span class="section-title dark-text">INQUIRIES</span>
+      </div>
+      <h2>Let’s create your <br> dream space together.</h2>
+      
+      <div class="details">
+        <div class="detail-item">
+          <span>EMAIL</span>
+          <p>hello@monolith.arch</p>
+        </div>
+        <div class="detail-item">
+          <span>OFFICE</span>
+          <p>12/A, Design Avenue, <br> Colombo 07, Sri Lanka</p>
+        </div>
+        <div class="detail-item">
+          <span>PHONE</span>
+          <p>+94 77 123 4567</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <label>YOUR NAME</label>
+          <input type="text" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>EMAIL ADDRESS</label>
+          <input type="email" placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>MESSAGE</label>
+          <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          SEND MESSAGE <span class="btn-line"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-nav">
+        <span class="nav-link">PRIVATE SPACES</span>
+        <span class="nav-link">CONCEPTUAL DESIGN</span>
+        <span class="nav-link">INQUIRIES</span>
+      </div>
+      <div class="social-links">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">LINKEDIN</a>
+        <a href="#">BEHANCE</a>
+      </div>
+      <p class="copyright">© 2026 MONOLITH ARCHITECTURE. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <div class="footer-right">
+      <h1 class="footer-logo">MONOLITH</h1>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,719 @@
+/* 1. ROOT VARIABLES */
+:host {
+  --gold: #bfa37e;
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --dark-text: #111111;
+  --light-gray: #f2f2f2; 
+}
+
+/* 2. GLOBAL CONTAINER */
+.luxury-container {
+  background-color: var(--bg);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* 3. NAVIGATION & HERO  */
+.navbar { position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 40px 60px; z-index: 10; align-items: center; }
+.logo { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 5px; font-weight: 700; color: #fff; }
+.nav-links span { font-size: 11px; letter-spacing: 3px; margin-left: 30px; cursor: pointer; opacity: 0.6; transition: 0.4s; color: #fff; }
+.hero-section { height: 100vh; display: flex; align-items: center; position: relative; }
+.hero-image-wrapper { position: absolute; width: 50%; height: 70%; right: 10%; overflow: hidden; }
+.hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(70%); }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, var(--bg) 15%, transparent 100%); }
+.hero-text { position: relative; z-index: 5; padding-left: 10%; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(60px, 8vw, 120px); line-height: 0.9; margin: 0; }
+
+
+
+/* Hero Text Styling */
+.hero-text {
+  position: relative;
+  z-index: 5;
+  padding-left: 10%;
+  max-width: 600px; 
+}
+
+.pre-title {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 8px;
+  display: block;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 8vw, 110px); 
+  font-weight: 400;
+  line-height: 0.85;
+  margin: 0 0 30px 0;
+  letter-spacing: -2px;
+}
+
+.hero-text p {
+  max-width: 380px;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.6;
+  margin-bottom: 50px; 
+}
+
+/* Luxury 'View Projects' Button */
+.explore-btn {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.explore-btn .line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.explore-btn:hover .line {
+  width: 80px;
+}
+
+.explore-btn:hover {
+  color: var(--gold);
+}
+
+
+
+
+
+
+
+
+/* 4. MODERNIZE "OUR SERVICES" - LUXURY EDITION */
+.expertise-section {
+  padding: 100px 10%; 
+  background-color: #ffffff;
+  color: var(--dark-text);
+  position: relative;
+}
+
+.expertise-section .section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.expertise-section .line {
+  width: 60px;
+  height: 1px; 
+  background: var(--gold);
+}
+
+.expertise-section .section-title {
+  color: var(--dark-text);
+  font-size: 12px;
+  letter-spacing: 8px; 
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Grid layout with soft borders */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px; 
+}
+
+.skill-card {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 40px 0;
+  border-bottom: 1px solid #f0f0f0; 
+}
+
+/* Hover Effect*/
+.skill-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.6s ease;
+}
+
+.skill-card:hover::after {
+  width: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card .number {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-style: italic; 
+  font-weight: 400;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.skill-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; 
+  margin-bottom: 25px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+}
+
+.skill-card p {
+  font-size: 14px;
+  line-height: 2; 
+  color: #666;
+  max-width: 280px;
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+/* 6. PREMIUM GALLERY SECTION */
+.gallery-section {
+  padding: 100px 10%;
+  background-color: #e1e1e1 !important; /* Premium light gray background */
+}
+
+.gallery-section .section-header {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.gallery-section .dark-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold) !important;
+}
+
+.gallery-section .dark-text {
+  color: var(--dark-text) !important;
+  font-size: 11px;
+  letter-spacing: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* 7. GALLERY GRID (Aligning like image_43a700.png) */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.gallery-item:nth-child(1) {
+  grid-column: span 2; 
+  height: 550px;
+}
+
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3) {
+  height: 350px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); 
+  z-index: 2;
+}
+
+.item-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.item-info p {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+/* --- HOVER EFFECT CODE ONLY --- */
+
+/* 1. Image Zoom Animation */
+.gallery-item img {
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* 2. Project Details Reveal Animation */
+.item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 100%);
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.item-info h4, 
+.item-info .location {
+  opacity: 1;
+  margin-bottom: 5px;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: #ddd;
+  line-height: 1.5;
+  margin-top: 15px;
+  max-width: 90%;
+  
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* --- HOVER EFFECTS --- */
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover .project-desc {
+  opacity: 1;
+  max-height: 100px; 
+  margin-top: 15px;
+}
+
+.gallery-item:hover .item-info {
+  padding-bottom: 40px;
+}
+
+
+
+
+
+
+/* 10. DESIGN PHILOSOPHY SECTION - COMPACT & LUXURY */
+.philosophy-section {
+  padding: 120px 10%;
+  background-color: #ffffff;
+}
+
+.philosophy-section .section-header {
+  margin-bottom: 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.philosophy-section .dark-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold) !important;
+}
+
+.philosophy-section .dark-text {
+  color: var(--dark-text) !important;
+  font-size: 11px;
+  letter-spacing: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr; 
+  gap: 100px;
+  align-items: start;
+}
+
+.philosophy-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 4vw, 55px);
+  line-height: 1.2;
+  margin-bottom: 25px; 
+  font-weight: 400;
+  color: var(--dark-text);
+}
+
+.philosophy-text p {
+  font-size: 16px;
+  line-height: 1.9; 
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 90%;
+}
+
+/* Stats Styling */
+.stats-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.gold-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #888;
+}
+
+.philosophy-image {
+  position: relative;
+  width: 100%;
+  height: 480px; 
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.philosophy-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+/* Vertical Overlay Text */
+.image-overlay-text {
+  position: absolute;
+  top: 40px;
+  right: -25px;
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 9. ENHANCED LUXURY INQUIRY SECTION */
+.inquiry-section {
+  padding: 100px 10%;
+  background-color: #e1e1e1;
+  color: var(--dark-text);
+}
+
+.inquiry-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 120px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.3; 
+  margin: 40px 0 60px 0;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+/* 2. Detail Items (Email, Office, Phone)  */
+.detail-item {
+  margin-bottom: 50px; 
+}
+
+.detail-item span {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--gold); 
+  display: block;
+  margin-bottom: 15px; 
+  font-weight: 600;
+}
+
+.detail-item p {
+  font-size: 16px;
+  line-height: 1.8; 
+  opacity: 0.8;
+}
+
+/* --- CONTACT FORM LINE SPACING --- */
+
+.contact-form .form-group {
+  margin-bottom: 65px; 
+  position: relative;
+}
+
+.contact-form label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  display: block;
+  margin-bottom: 20px; 
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1.6; 
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.4s ease;
+}
+
+.submit-btn {
+  margin-top: 80px; 
+  background: none;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: var(--dark-text);
+  transition: 0.4s;
+}
+
+
+
+
+
+
+
+
+/* 11. LUXURY FOOTER SECTION */
+.main-footer {
+  padding: 100px 10% 60px 10%;
+  background-color: #000000; 
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.footer-nav .nav-link {
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-nav .nav-link:hover {
+  color: var(--gold); 
+}
+
+.social-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+.copyright {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 40px;
+}
+
+.footer-right .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 15vw, 200px); 
+  line-height: 0.8;
+  margin: 0;
+  color: rgba(255,255,255,0.05); 
+  letter-spacing: -5px;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* 1. Tablets , Laptops (Max-width: 1024px) */
+@media (max-width: 1024px) {
+  .philosophy-grid, .inquiry-container {
+    gap: 60px; 
+  }
+
+  .hero-text h1 {
+    font-size: 80px; 
+  }
+}
+
+/* 2. Mobile Phones (Max-width: 768px) */
+@media (max-width: 768px) {
+  .luxury-container, .philosophy-section, .inquiry-section, .expertise-section {
+    padding: 80px 5%; 
+  }
+
+  .navbar {
+    padding: 30px 5%;
+  }
+  
+  .nav-links {
+    display: none; 
+  }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: left;
+    height: auto;
+    padding-top: 120px;
+  }
+
+  .hero-text h1 {
+    font-size: 60px; /* */
+    line-height: 1.1;
+  }
+
+  .expertise-grid, 
+  .philosophy-grid, 
+  .inquiry-container,
+  .footer-container {
+    grid-template-columns: 1fr !important; 
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .philosophy-image {
+    height: 350px; 
+    order: -1; 
+  }
+
+  .philosophy-text h2 {
+    font-size: 38px;
+    line-height: 1.3; 
+  }
+
+  .footer-right .footer-logo {
+    font-size: 60px; 
+    text-align: left;
+  }
+}
+
+/* 3. tiny Phones  (Max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 45px;
+  }
+
+  .stats-grid {
+    flex-direction: column; 
+    gap: 30px;
+  }
+}
